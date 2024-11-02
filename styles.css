@@ -1,4 +1,4 @@
-   /* Réinitialiser les marges et les bordures par défaut */
+/* Réinitialiser les marges et les bordures par défaut */
 * {
     margin: 0;
     padding: 0;
@@ -52,18 +52,18 @@ nav ul li a:hover {
 }
 
 .section-products .product-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Plusieurs colonnes */
     gap: 20px;
+    justify-content: center;
 }
 
 .product-item {
     background: linear-gradient(135deg, #ffcc99, #ff9900);
     border: 1px solid #ddd;
     padding: 20px;
-    width: 200px;
-    height: auto;
+    width: 100%;
+    max-width: 200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
@@ -93,4 +93,19 @@ footer {
 /* Style pour le contact */
 .section-contact {
     margin-top: 30px;
-}               
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    /* Ajuste le nombre de colonnes pour les écrans moyens */
+    .section-products .product-list {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Plus petites colonnes */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajuste le nombre de colonnes pour les petits écrans */
+    .section-products .product-list {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Colonnes encore plus petites */
+    }
+}
