@@ -25,6 +25,56 @@ function filterProducts() {
         item.style.display = productName.includes(input) ? '' : 'none';
     });
 }
+// Initialiser un objet pour stocker les articles du panier
+const cart = {};
+
+// Fonction pour mettre à jour le panier
+function updateCart(productName, productPrice, quantityChange) {
+    // Vérifier si le produit existe déjà dans le panier
+    if (!cart[productName]) {
+        // Si non, initialiser la quantité et le prix total
+        cart[productName] = { quantity: 0, price: productPrice };
+    }
+
+    // Modifier la quantité en fonction du changement
+    cart[productName].quantity += quantityChange;
+
+    // Ne pas permettre des quantités négatives
+    if (cart[productName].quantity < 0) {
+        cart[productName].quantity = 0;
+    }
+
+    // Mettre à jour l'affichage du nombre d'articles
+    document.getElementById(`count-${productName.replace(/ /g, '-')}`).innerText = cart[productName].quantity;
+
+    // Afficher les articles du panier
+    displayCartItems();
+}
+
+// Fonction pour afficher les articles dans le panier
+function displayCartItems() {
+    const cartItemsDiv = document.getElementById("cartItems");
+    cartItemsDiv.innerHTML = ""; // Réinitialiser le contenu
+
+    // Vérifier si le panier est vide
+    if (Object.keys(cart).length === 0) {
+        cartItemsDiv.innerHTML = "<p>Votre panier est vide.</p>";
+        return;
+    }
+
+    // Créer une liste pour les articles du panier
+    const ul = document.createElement("ul");
+
+    // Ajouter chaque produit du panier à la liste
+    for (const product in cart) {
+        const item = document.createElement("li");
+        item.textContent = `${product}: ${cart[product].quantity} x ${cart[product].price}f`;
+        ul.appendChild(item);
+    }
+
+    // Ajouter la liste au conteneur du panier
+    cartItemsDiv.appendChild(ul);
+}
 
 function showCart() {
     const cartDetails = cart.map(item => `${item.name} - ${item.price}f`).join('\n');
