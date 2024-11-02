@@ -108,12 +108,18 @@ footer {
 
     /* Sections: Ajuste la largeur des produits */
     .section-products .product-list {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Produit de taille ajustée */
+        gap: 10px;
     }
 
     .product-item {
-        width: 100%;
-        max-width: 300px; /* Limite la largeur pour éviter trop de largeur sur les écrans larges */
+        width: 100%; /* S'adapte à la largeur de la grille */
+        padding: 15px;
+    }
+
+    .product-item img {
+        height: 100px; /* Ajuste la hauteur pour s'adapter à une taille plus petite */
     }
 }
 
@@ -132,9 +138,16 @@ footer {
         padding: 10px;
     }
 
-    /* Produit */
+    .section-products .product-list {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adapte encore plus la taille des colonnes */
+    }
+
     .product-item {
-        padding: 15px;
+        padding: 10px;
+    }
+
+    .product-item img {
+        height: 80px; /* Taille encore plus petite */
     }
 
     footer {
