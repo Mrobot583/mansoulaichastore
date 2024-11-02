@@ -94,3 +94,50 @@ footer {
 .section-contact {
     margin-top: 30px;
 }
+
+/* Responsive design */
+@media (max-width: 768px) {
+    /* Header: Ajuste le logo et la navigation pour les petits écrans */
+    header {
+        flex-direction: column;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Sections: Ajuste la largeur des produits */
+    .section-products .product-list {
+        flex-direction: column;
+    }
+
+    .product-item {
+        width: 100%;
+        max-width: 300px; /* Limite la largeur pour éviter trop de largeur sur les écrans larges */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Réduit les marges et le padding pour les très petits écrans */
+    body {
+        padding: 10px;
+    }
+
+    header {
+        padding: 5px 10px;
+    }
+
+    /* Sections */
+    .section-home, .section-about, .section-products, .section-contact {
+        padding: 10px;
+    }
+
+    /* Produit */
+    .product-item {
+        padding: 15px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+}
