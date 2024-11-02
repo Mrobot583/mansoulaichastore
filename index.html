@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ManSoulAïsha Store</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="logo.jpg" type="image/x-icon"> <!-- Icône du site -->
+    <link rel="icon" href="logo.jpg" type="logo/x-icon"> <!-- Icône du site -->
 </head>
 <body>
-    <!-- Header avec barre de recherche et panier -->
+    <!-- Header -->
     <header>
         <div class="logo">
             <img src="logo.jpg" alt="Logo ManSoulAïsha Store">
@@ -21,41 +21,30 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <div class="search-cart">
-            <input type="text" id="searchInput" placeholder="Rechercher un produit..." oninput="filterProducts()">
-            <div class="cart-icon" onclick="showCart()">
-                🛒 <span id="cartCount">0</span>
-            </div>
-        </div>
     </header>
 
-    <!-- Sections principales -->
+    <!-- Home Section -->
     <section id="home" class="section-home">
         <h1>Bienvenue chez ManSoulAïsha Store</h1>
         <p>De l'unique à l'essentiel, tout est ici! Découvrez notre gamme de produits de qualité à prix abordables.</p>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="section-about">
         <h2>À propos de nous</h2>
         <p>Chez ManSoulAïsha Store, nous avons à cœur de vous offrir une expérience d'achat exceptionnelle. Notre mission est de rendre des produits de qualité accessibles à tous.</p>
     </section>
 
-    <!-- Section Produits -->
-   <!-- Products Section -->
+    <!-- Products Section -->
+  <!-- Products Section -->
 <section id="products" class="section-products">
     <h2>Nos Produits</h2>
     <div class="product-list">
-
         <!-- Produit 1 -->
         <div class="product-item">
             <img src="fune.jpeg" alt="Beurre de fenugrec et akpi">
             <h3>Beurre de fenugrec et akpi</h3>
             <p>3.000f - 2.500f</p>
-            <div class="product-controls">
-                <button onclick="updateCart('Beurre de fenugrec et akpi', 3000, 1)">+1</button>
-                <span id="count-Beurre-de-fenugrec-et-akpi">0</span>
-                <button onclick="updateCart('Beurre de fenugrec et akpi', 3000, -1)">-1</button>
-            </div>
         </div>
 
         <!-- Produit 2 -->
@@ -63,11 +52,6 @@
             <img src="csolaire.jpeg" alt="Crème solaire">
             <h3>Crème solaire</h3>
             <p>4.500f</p>
-            <div class="product-controls">
-                <button onclick="updateCart('Crème solaire', 4500, 1)">+1</button>
-                <span id="count-Crème-solaire">0</span>
-                <button onclick="updateCart('Crème solaire', 4500, -1)">-1</button>
-            </div>
         </div>
 
         <!-- Produit 3 -->
@@ -75,11 +59,6 @@
             <img src="gant.jpeg" alt="Gants">
             <h3>Gants</h3>
             <p>750f</p>
-            <div class="product-controls">
-                <button onclick="updateCart('Gants', 750, 1)">+1</button>
-                <span id="count-Gants">0</span>
-                <button onclick="updateCart('Gants', 750, -1)">-1</button>
-            </div>
         </div>
 
         <!-- Produit 4 -->
@@ -87,11 +66,6 @@
             <img src="holi.jpeg" alt="Huile d'olive">
             <h3>Huile d'olive</h3>
             <p>9.000f</p>
-            <div class="product-controls">
-                <button onclick="updateCart('Huile d\'olive', 9000, 1)">+1</button>
-                <span id="count-Huile-d'olive">0</span>
-                <button onclick="updateCart('Huile d\'olive', 9000, -1)">-1</button>
-            </div>
         </div>
 
         <!-- Produit 5 -->
@@ -99,11 +73,6 @@
             <img src="hrec.jpeg" alt="Huile de ricin 1L">
             <h3>Huile de ricin 1L</h3>
             <p>7.500f</p>
-            <div class="product-controls">
-                <button onclick="updateCart('Huile de ricin 1L', 7500, 1)">+1</button>
-                <span id="count-Huile-de-ricin-1L">0</span>
-                <button onclick="updateCart('Huile de ricin 1L', 7500, -1)">-1</button>
-            </div>
         </div>
 
         <!-- Produit 6 -->
@@ -111,11 +80,6 @@
             <img src="akpi.jpg" alt="Akpi">
             <h3>Akpi</h3>
             <p>5.000f</p>
-            <div class="product-controls">
-                <button onclick="updateCart('Akpi', 5000, 1)">+1</button>
-                <span id="count-Akpi">0</span>
-                <button onclick="updateCart('Akpi', 5000, -1)">-1</button>
-            </div>
         </div>
 
         <!-- Produit 7 -->
@@ -123,11 +87,6 @@
             <img src="chebe.jpeg" alt="Huile de chébè">
             <h3>Huile de chébè</h3>
             <p>5.000f</p>
-            <div class="product-controls">
-                <button onclick="updateCart('Huile de chébè', 5000, 1)">+1</button>
-                <span id="count-Huile-de-chébè">0</span>
-                <button onclick="updateCart('Huile de chébè', 5000, -1)">-1</button>
-            </div>
         </div>
 
         <!-- Produit 8 -->
@@ -135,11 +94,6 @@
             <img src="cetnil.jpeg" alt="Crème wada et nila bleu">
             <h3>Crème wada et nila bleu</h3>
             <p>2.000f</p>
-            <div class="product-controls">
-                <button onclick="updateCart('Crème wada et nila bleu', 2000, 1)">+1</button>
-                <span id="count-Crème-wada-et-nila-bleu">0</span>
-                <button onclick="updateCart('Crème wada et nila bleu', 2000, -1)">-1</button>
-            </div>
         </div>
 
         <!-- Produit 9 -->
@@ -147,11 +101,6 @@
             <img src="corot.jpeg" alt="Masque curcuma et masque carotte">
             <h3>Masque curcuma et masque carotte</h3>
             <p>2.500f</p>
-            <div class="product-controls">
-                <button onclick="updateCart('Masque curcuma et masque carotte', 2500, 1)">+1</button>
-                <span id="count-Masque-curcuma-et-masque-carotte">0</span>
-                <button onclick="updateCart('Masque curcuma et masque carotte', 2500, -1)">-1</button>
-            </div>
         </div>
 
         <!-- Produit 10 -->
@@ -159,11 +108,6 @@
             <img src="gammenila.jpg" alt="Gamme nila">
             <h3>Gamme nila</h3>
             <p>16.500f</p>
-            <div class="product-controls">
-                <button onclick="updateCart('Gamme nila', 16500, 1)">+1</button>
-                <span id="count-Gamme-nila">0</span>
-                <button onclick="updateCart('Gamme nila', 16500, -1)">-1</button>
-            </div>
         </div>
 
         <!-- Produit 11 -->
@@ -171,23 +115,19 @@
             <img src="tahara.jpeg" alt="Musk Tahara">
             <h3>Musk Tahara</h3>
             <p>1.000f</p>
-            <div class="product-controls">
-                <button onclick="updateCart('Musk Tahara', 1000, 1)">+1</button>
-                <span id="count-Musk-Tahara">0</span>
-                <button onclick="updateCart('Musk Tahara', 1000, -1)">-1</button>
-            </div>
         </div>
-
+          <!-- Produit 14 -->
+          <div class="product-item">
+            <img src="gamme yara.jpg" alt="Gamme musk tahara">
+            <h3>Gamme musk Tahara</h3>
+            <p>17.000f</p>
+        </div>
+    
         <!-- Produit 12 -->
         <div class="product-item">
             <img src="yara.jpeg" alt="Gamme yara">
             <h3>Gamme yara</h3>
             <p>12.000f</p>
-            <div class="product-controls">
-                <button onclick="updateCart('Gamme yara', 12000, 1)">+1</button>
-                <span id="count-Gamme-yara">0</span>
-                <button onclick="updateCart('Gamme yara', 12000, -1)">-1</button>
-            </div>
         </div>
 
         <!-- Produit 13 -->
@@ -195,69 +135,121 @@
             <img src="carg.jpeg" alt="Gamme carotte">
             <h3>Gamme carotte</h3>
             <p>11.000f</p>
-            <div class="product-controls">
-                <button onclick="updateCart('Gamme carotte', 11000, 1)">+1</button>
-                <span id="count-Gamme-carotte">0</span>
-                <button onclick="updateCart('Gamme carotte', 11000, -1)">-1</button>
-            </div>
         </div>
 
-        <!-- Produit 14 -->
+<!-- Produit 14 et 15 supprimer deja fait en haut-->
+       
+        <!-- Produit 16 -->
         <div class="product-item">
             <img src="saboubougnoul.jpeg" alt="Savon noir charbon">
             <h3>Savon noir charbon</h3>
             <p>1.500f</p>
-            <div class="product-controls">
-                <button onclick="updateCart('Savon noir charbon', 1500, 1)">+1</button>
-                <span id="count-Savon-noir-charbon">0</span>
-                <button onclick="updateCart('Savon noir charbon', 1500, -1)">-1</button>
-            </div>
         </div>
 
-        <!-- Produit 15 -->
+        <!-- Produit 17 -->
         <div class="product-item">
-            <img src="crn.jpeg" alt="Crème">
-            <h3>Crème</h3>
-            <p>2.500f</p>
-            <div class="product-controls">
-                <button onclick="updateCart('Crème', 2500, 1)">+1</button>
-                <span id="count-Crème">0</span>
-                <button onclick="updateCart('Crème', 2500, -1)">-1</button>
-            </div>
+            <img src="setbaby.jpeg" alt="Set baby">
+            <h3>Set baby</h3>
+            <p>10.000f</p>
         </div>
 
-        <!-- Produit 16 -->
+        <!-- Produit 18 -->
         <div class="product-item">
-            <img src="huile.jpeg" alt="Huile d'argan">
-            <h3>Huile d'argan</h3>
-            <p>15.000f</p>
-            <div class="product-controls">
-                <button onclick="updateCart('Huile d\'argan', 15000, 1)">+1</button>
-                <span id="count-Huile-d'argan">0</span>
-                <button onclick="updateCart('Huile d\'argan', 15000, -1)">-1</button>
-            </div>
+            <img src="huile.jpg" alt="Toutes sortes d'huiles">
+            <h3>Toutes sortes d'huiles</h3>
+            <p>1.250f l'unité</p>
+        </div>
+
+        <!-- Produit 19 -->
+        <div class="product-item">
+            <img src="sew.jpeg" alt="Thé minceur">
+            <h3>Thé minceur</h3>
+            <p>4.500f</p>
+        </div>
+
+        <!-- Produit 20  moy produit 14 bi-->
+        
+
+        <!-- Produit 21 -->
+        <div class="product-item">
+            <img src="sew2.jpeg" alt="Thé ventre plat">
+            <h3>Thé ventre plat</h3>
+            <p>3.500f</p>
+        </div>
+
+        <!-- Produit 22 -->
+        <div class="product-item">
+            <img src="romain.jpeg" alt="Huiles essentielles romarin">
+            <h3>Huiles essentielles romarin</h3>
+            <p>3.500f</p>
+        </div>
+
+        <!-- Produit 23 -->
+        <div class="product-item">
+            <img src="mininila.jpeg" alt="Mini gamme nila">
+            <h3>Mini gamme nila</h3>
+            <p>6.000f</p>
+        </div>
+
+        <!-- Produit 24 -->
+        <div class="product-item">
+            <img src="sermcar.jpeg" alt="Serum carotte">
+            <h3>Serum carotte</h3>
+            <p>3.000f</p>
+        </div>
+        <!-- Produit 25 -->
+        <div class="product-item">
+            <img src="robe.jpg" alt="Robe">
+            <h3>Robe</h3>
+            <p>8.000f</p>
+        </div>
+        <!-- Produit 26 -->
+        <div class="product-item">
+            <img src="sac.jpg" alt="sac">
+            <h3>Sac</h3>
+            <p>6.500f</p>
+        </div>
+        <!-- Produit 27 -->
+        <div class="product-item">
+            <img src="sacoche.jpg" alt="sacoche">
+            <h3>Sacoche</h3>
+            <p>4.000f</p>
+        </div>
+        <!-- Produit 27 -->
+        <div class="product-item">
+            <img src="beurj.jpeg" alt="Beurre de Gingembre">
+            <h3>Beurre de Gingembre</h3>
+            <p>4.000f</p>
+        </div>
+
+        <div class="product-item">
+            <img src="packj.jpg" alt="Pack Jalaba">
+            <h3>Pack Jalaba</h3>
+            <p>16.000f</p>
+        </div>
+
+        <div class="product-item">
+            <img src="coff.jpg" alt="Coffret Chapelet">
+            <h3>Coffret Chapelet</h3>
+            <p>3.000f</p>
         </div>
 
     </div>
 </section>
 
-<!-- Section pour afficher le panier -->
-<div id="cartItems"></div>
 
-
-
- <!-- Section Contact -->
-<section id="contact" class="section-contact">
-    <h2>Pour toute question ou demande d'informations, contactez-nous au +221 76 331 97 84 ou +221 78 769 84 86</h2>
-    <p>Rejoignez notre groupe WhatsApp pour discuter avec nous ! <a href="https://chat.whatsapp.com/BnuSRcfZvMN3biQarxTic8" target="_blank">Rejoindre le groupe WhatsApp</a></p>
-</section>
+    <!-- Contact Section -->
+    <section id="contact" class="section-contact">
+        <h2>Pour toute question ou demande d'informations, contactez-nous au +221 76 331 97 84 ou +221 78 769 84 86</h2>
+        <p>Rejoignez notre groupe WhatsApp pour discuter avec nous ! <a href="https://chat.whatsapp.com/BnuSRcfZvMN3biQarxTic8" target="_blank">Rejoindre le groupe WhatsApp</a></p>
+    </section>
 
     <!-- Footer -->
- <footer>
-     <p>Site by kËr Warr</p>
-    <p>Infoline: kerwaar@gmail.com</p>
-</footer>
+    <footer>
+        <p>Site by kËr Warr</p>
+        <p>Infoline: kerwaar@gmail.com </p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
-</html>
+</html>      
