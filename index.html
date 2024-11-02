@@ -251,6 +251,30 @@
     <p>Site by kËr Warr</p>
     <p>Infoline: <a href="mailto:kerwaar@gmail.com">kerwaar@gmail.com</a></p>
     </footer>
+    <div class="carousel">
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <div class="carousel-images">
+        <img src="https://via.placeholder.com/200x200?text=Beurre+de+fenugrec" alt="Beurre de fenugrec et akpi">
+        <img src="https://via.placeholder.com/200x200?text=Creme+Solaire" alt="Crème solaire">
+        <img src="https://via.placeholder.com/200x200?text=Gants" alt="Gants">
+        <img src="https://via.placeholder.com/200x200?text=Huile+d'Olive" alt="Huile d'olive">
+        <img src="https://via.placeholder.com/200x200?text=Huile+de+Ricin" alt="Huile de ricin 1L">
+    </div>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+<div class="product-item">
+    <img src="https://via.placeholder.com/200x200?text=Beurre+de+fenugrec" alt="Beurre de fenugrec et akpi">
+    <h3>Beurre de fenugrec et akpi</h3>
+    <p>3.000f - 2.500f</p>
+    <button onclick="addToCart('Beurre de fenugrec et akpi', 2500)">Ajouter au panier</button>
+</div>
+<input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Rechercher des produits...">
+<section id="cart" class="section-cart">
+    <h2>Votre Panier</h2>
+    <div id="cartItems"></div>
+</section>
+<button onclick="toggleTheme()">Changer de thème</button>
+
 
     <script src="script.js"></script>
 </body>
