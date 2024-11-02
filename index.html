@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ManSoulAïsha Store</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="logo.jpg" type="logo/x-icon"> <!-- Icône du site -->
+    <link rel="icon" href="logo.jpg" type="image/x-icon"> <!-- Icône du site -->
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header avec barre de recherche et panier -->
     <header>
         <div class="logo">
             <img src="logo.jpg" alt="Logo ManSoulAïsha Store">
@@ -16,27 +16,32 @@
         <nav>
             <ul>
                 <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
                 <li><a href="#products">Produits</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <div class="search-cart">
+            <input type="text" id="searchInput" placeholder="Rechercher un produit..." oninput="filterProducts()">
+            <div class="cart-icon" onclick="showCart()">
+                🛒 <span id="cartCount">0</span>
+            </div>
+        </div>
     </header>
 
-    <!-- Home Section -->
+    <!-- Sections principales -->
     <section id="home" class="section-home">
         <h1>Bienvenue chez ManSoulAïsha Store</h1>
         <p>De l'unique à l'essentiel, tout est ici! Découvrez notre gamme de produits de qualité à prix abordables.</p>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="section-about">
         <h2>À propos de nous</h2>
         <p>Chez ManSoulAïsha Store, nous avons à cœur de vous offrir une expérience d'achat exceptionnelle. Notre mission est de rendre des produits de qualité accessibles à tous.</p>
     </section>
 
-    <!-- Products Section -->
-  <!-- Products Section -->
-<section id="products" class="section-products">
+    <!-- Section Produits -->
+    <section id="products" class="section-products">
     <h2>Nos Produits</h2>
     <div class="product-list">
         <!-- Produit 1 -->
@@ -234,13 +239,10 @@
         </div>
 
 
-
-
     </div>
 </section>
 
-
-    <!-- Contact Section -->
+    <!-- Section Contact -->
     <section id="contact" class="section-contact">
         <h2>Pour toute question ou demande d'informations, contactez-nous au +221 76 331 97 84 ou +221 78 769 84 86</h2>
         <p>Rejoignez notre groupe WhatsApp pour discuter avec nous ! <a href="https://chat.whatsapp.com/BnuSRcfZvMN3biQarxTic8" target="_blank">Rejoindre le groupe WhatsApp</a></p>
@@ -248,10 +250,10 @@
 
     <!-- Footer -->
     <footer>
-    <p>Site by kËr Warr</p>
-    <p>Infoline: <a href="mailto:kerwaar@gmail.com">kerwaar@gmail.com</a></p>
+        <p>Site by kËr Warr</p>
+        <p>Infoline: kerwaar@gmail.com</p>
     </footer>
-   
+
     <script src="script.js"></script>
 </body>
 </html>
