@@ -52,18 +52,18 @@ nav ul li a:hover {
 }
 
 .section-products .product-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Plusieurs colonnes */
     gap: 20px;
+    justify-content: center;
 }
 
 .product-item {
     background: linear-gradient(135deg, #ffcc99, #ff9900);
     border: 1px solid #ddd;
     padding: 20px;
-    width: 200px;
-    height: auto;
+    width: 100%;
+    max-width: 200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
@@ -97,60 +97,15 @@ footer {
 
 /* Responsive design */
 @media (max-width: 768px) {
-    /* Header: Ajuste le logo et la navigation pour les petits écrans */
-    header {
-        flex-direction: column;
-    }
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    /* Sections: Ajuste la largeur des produits */
+    /* Ajuste le nombre de colonnes pour les écrans moyens */
     .section-products .product-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Produit de taille ajustée */
-        gap: 10px;
-    }
-
-    .product-item {
-        width: 100%; /* S'adapte à la largeur de la grille */
-        padding: 15px;
-    }
-
-    .product-item img {
-        height: 100px; /* Ajuste la hauteur pour s'adapter à une taille plus petite */
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Plus petites colonnes */
     }
 }
 
 @media (max-width: 480px) {
-    /* Réduit les marges et le padding pour les très petits écrans */
-    body {
-        padding: 10px;
-    }
-
-    header {
-        padding: 5px 10px;
-    }
-
-    /* Sections */
-    .section-home, .section-about, .section-products, .section-contact {
-        padding: 10px;
-    }
-
+    /* Ajuste le nombre de colonnes pour les petits écrans */
     .section-products .product-list {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adapte encore plus la taille des colonnes */
-    }
-
-    .product-item {
-        padding: 10px;
-    }
-
-    .product-item img {
-        height: 80px; /* Taille encore plus petite */
-    }
-
-    footer {
-        padding: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Colonnes encore plus petites */
     }
 }
