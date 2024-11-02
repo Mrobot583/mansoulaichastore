@@ -1,4 +1,4 @@
-/* Réinitialiser les marges et les bordures par défaut */
+/* Réinitialiser les marges et les bordures */
 * {
     margin: 0;
     padding: 0;
@@ -11,17 +11,17 @@ body {
     background-color: #f5f5f5;
 }
 
-/* Style pour le header */
+/* Header */
 header {
-    background-color: #f60; /* Orange pour le header */
-    padding: 10px 20px;
+    background-color: #f60;
     color: white;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
 }
 
-header .logo img {
+.logo img {
     max-width: 50px;
 }
 
@@ -41,19 +41,27 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Style pour les sections */
-.section-home, .section-about, .section-products, .section-contact {
-    padding: 20px;
-    text-align: center;
+/* Barre de recherche et icône du panier */
+.search-cart {
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
-.section-products h2 {
-    margin-bottom: 30px;
+.search-cart input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
 }
 
+.cart-icon {
+    cursor: pointer;
+}
+
+/* Section Produits */
 .section-products .product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Plusieurs colonnes */
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
@@ -62,13 +70,9 @@ nav ul li a:hover {
     background: linear-gradient(135deg, #ffcc99, #ff9900);
     border: 1px solid #ddd;
     padding: 20px;
-    width: 100%;
-    max-width: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 200px;
     text-align: center;
+    color: white;
 }
 
 .product-item img {
@@ -78,34 +82,20 @@ nav ul li a:hover {
     margin-bottom: 15px;
 }
 
-.product-item h3, .product-item p {
-    color: #fff;
+.product-item button {
+    background-color: #fff;
+    color: #f60;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
 }
 
-/* Style pour le footer */
+/* Footer */
 footer {
     background-color: #f60;
     color: white;
-    padding: 20px;
     text-align: center;
-}
-
-/* Style pour le contact */
-.section-contact {
-    margin-top: 30px;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    /* Ajuste le nombre de colonnes pour les écrans moyens */
-    .section-products .product-list {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Plus petites colonnes */
-    }
-}
-
-@media (max-width: 480px) {
-    /* Ajuste le nombre de colonnes pour les petits écrans */
-    .section-products .product-list {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Colonnes encore plus petites */
-    }
+    padding: 10px;
 }
