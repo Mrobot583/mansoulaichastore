@@ -81,6 +81,28 @@ nav ul li a:hover {
 .product-item h3, .product-item p {
     color: #fff;
 }
+/* Style pour le bouton Ajouter au panier */
+.add-to-cart {
+    background-color: #ff6600; /* Orange pour le bouton */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Effet au survol */
+.add-to-cart:hover {
+    background-color: #e65c00; /* Teinte plus foncée au survol */
+}
+
+/* Style pour le bouton Ajouter au panier dans les produits */
+.product-item .add-to-cart {
+    margin-top: 10px;
+}
 
 /* Style pour le footer */
 footer {
