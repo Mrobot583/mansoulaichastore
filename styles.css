@@ -58,28 +58,48 @@ nav ul li a:hover {
     justify-content: center;
 }
 
+/* Styles de base */
 .product-item {
-    background: linear-gradient(135deg, #ffcc99, #ff9900);
     border: 1px solid #ddd;
-    padding: 20px;
-    width: 100%;
-    max-width: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 200px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
 }
 
 .product-item img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    margin-bottom: 15px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
 }
 
-.product-item h3, .product-item p {
+.product-item h3 {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.product-item p {
+    font-size: 1em;
+    color: #f57c00;
+}
+
+.add-to-cart {
+    background-color: #f57c00;
     color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #e26c00;
 }
 
 /* Style pour le footer */
