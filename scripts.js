@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         renderCart();
     }
 
-    // Rendre le panier
+    // Fonction pour rendre le panier
     function renderCart() {
         cartItemsContainer.innerHTML = '';
         cart.forEach(item => {
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Recherche des produits
+    // Fonction de recherche
     searchInput.addEventListener('input', function() {
         const query = searchInput.value.toLowerCase();
         products.forEach(product => {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Ajout des événements de clic sur les boutons d'ajout au panier
+    // Ajout des événements pour le panier
     products.forEach(product => {
         const button = product.querySelector('.add-to-cart');
         button.addEventListener('click', function() {
@@ -58,11 +58,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const message = `Nom: ${name}\nPrénom: ${surname}\nTéléphone: ${phone}\nAdresse: ${address}`;
         
-        // Simulation de l'envoi de SMS (utilisez un service API ici pour envoyer des SMS)
+        // Simulation de l'envoi de SMS (remplacer par un service API réel pour l'envoi de SMS)
         console.log('Message envoyé à +221778154664:', message);
 
         alert('Votre commande a été envoyée avec succès!');
-        cart = [];  // Vide le panier après envoi
+        cart = [];  // Vide le panier après l'envoi
         renderCart();
     });
 });
