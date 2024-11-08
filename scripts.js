@@ -1,45 +1,52 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const products = document.querySelectorAll('.product-item');
-    const searchInput = document.getElementById('search');
+    const cart = [];
     const cartItemsContainer = document.getElementById('cart-items');
     const checkoutButton = document.getElementById('checkout');
     const deliveryForm = document.getElementById('delivery-form');
-    let cart = [];
+    const searchInput = document.getElementById('search');
+    const productItems = document.querySelectorAll('.product-item');
 
-    // Fonction pour ajouter un produit au panier
-    function addToCart(product) {
+    // Fonction pour ajouter au panier
+    function addToCart(productElement) {
+        const productName = productElement.querySelector('h3').textContent;
+        const productPrice = productElement.querySelector('p').textContent;
+        const product = {
+            name: productName,
+            price: productPrice,
+        };
         cart.push(product);
         renderCart();
     }
 
-    // Fonction pour rendre le panier
+    // Affichage du panier
     function renderCart() {
         cartItemsContainer.innerHTML = '';
         cart.forEach(item => {
             const div = document.createElement('div');
-            div.textContent = item.querySelector('h3').textContent;
+            div.textContent = `${item.name} - ${item.price}`;
             cartItemsContainer.appendChild(div);
         });
     }
 
-    // Fonction de recherche
+    // Recherche des produits
     searchInput.addEventListener('input', function() {
         const query = searchInput.value.toLowerCase();
-        products.forEach(product => {
-            const title = product.querySelector('h3').textContent.toLowerCase();
-            if (title.includes(query)) {
-                product.style.display = 'block';
+        productItems.forEach(item => {
+            const productName = item.querySelector('h3').textContent.toLowerCase();
+            if (productName.includes(query)) {
+                item.style.display = 'block';
             } else {
-                product.style.display = 'none';
+                item.style.display = 'none';
             }
         });
     });
 
-    // Ajout des événements pour le panier
-    products.forEach(product => {
-        const button = product.querySelector('.add-to-cart');
-        button.addEventListener('click', function() {
-            addToCart(product);
+    // Ajout au panier
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            const productItem = event.target.closest('.product-item');
+            addToCart(productItem);
         });
     });
 
@@ -51,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Envoi des informations de livraison
     deliveryForm.addEventListener('submit', function(event) {
         event.preventDefault();
+
         const name = document.getElementById('name').value;
         const surname = document.getElementById('surname').value;
         const phone = document.getElementById('phone').value;
@@ -58,11 +66,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const message = `Nom: ${name}\nPrénom: ${surname}\nTéléphone: ${phone}\nAdresse: ${address}`;
         
-        // Simulation de l'envoi de SMS (remplacer par un service API réel pour l'envoi de SMS)
-        console.log('Message envoyé à +221778154664:', message);
+        // Simule l'envoi de message (ici, vous pouvez intégrer une vraie API pour envoyer le SMS)
+        console.log(`Message envoyé à +221778154664: ${message}`);
 
-        alert('Votre commande a été envoyée avec succès!');
-        cart = [];  // Vide le panier après l'envoi
+        alert('Commande envoyée avec succès!');
+        cart.length = 0;  // Vider le panier après envoi
         renderCart();
     });
 });
