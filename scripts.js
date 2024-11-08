@@ -1,29 +1,68 @@
-// Script pour ajouter des produits au panier
-let cart = [];
+document.addEventListener('DOMContentLoaded', function() {
+    const products = document.querySelectorAll('.product-item');
+    const searchInput = document.getElementById('search');
+    const cartItemsContainer = document.getElementById('cart-items');
+    const checkoutButton = document.getElementById('checkout');
+    const deliveryForm = document.getElementById('delivery-form');
+    let cart = [];
 
-function addToCart(productName, productPrice) {
-    // Créer un objet produit à ajouter au panier
-    const product = {
-        name: productName,
-        price: productPrice
-    };
+    // Fonction pour ajouter un produit au panier
+    function addToCart(product) {
+        cart.push(product);
+        renderCart();
+    }
 
-    // Ajouter le produit au panier
-    cart.push(product);
-    alert(`${productName} a été ajouté au panier!`);
-    console.log(cart);
-}
+    // Rendre le panier
+    function renderCart() {
+        cartItemsContainer.innerHTML = '';
+        cart.forEach(item => {
+            const div = document.createElement('div');
+            div.textContent = item.querySelector('h3').textContent;
+            cartItemsContainer.appendChild(div);
+        });
+    }
 
-// Ajout des événements d'écoute pour chaque bouton "Ajouter au panier"
-document.querySelectorAll('.add-to-cart').forEach((button) => {
-    button.addEventListener('click', function () {
-        const productName = this.previousElementSibling.previousElementSibling.innerText; // Récupère le nom du produit
-        const productPrice = this.previousElementSibling.innerText; // Récupère le prix du produit
+    // Recherche des produits
+    searchInput.addEventListener('input', function() {
+        const query = searchInput.value.toLowerCase();
+        products.forEach(product => {
+            const title = product.querySelector('h3').textContent.toLowerCase();
+            if (title.includes(query)) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    });
 
-        // Nettoyage du prix pour qu'il soit un nombre sans 'f'
-        const priceNumber = parseInt(productPrice.replace('f', '').replace(' ', ''));
+    // Ajout des événements de clic sur les boutons d'ajout au panier
+    products.forEach(product => {
+        const button = product.querySelector('.add-to-cart');
+        button.addEventListener('click', function() {
+            addToCart(product);
+        });
+    });
 
-        // Ajout au panier
-        addToCart(productName, priceNumber);
+    // Validation du panier
+    checkoutButton.addEventListener('click', function() {
+        document.getElementById('delivery-info').style.display = 'block';
+    });
+
+    // Envoi des informations de livraison
+    deliveryForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const surname = document.getElementById('surname').value;
+        const phone = document.getElementById('phone').value;
+        const address = document.getElementById('address').value;
+
+        const message = `Nom: ${name}\nPrénom: ${surname}\nTéléphone: ${phone}\nAdresse: ${address}`;
+        
+        // Simulation de l'envoi de SMS (utilisez un service API ici pour envoyer des SMS)
+        console.log('Message envoyé à +221778154664:', message);
+
+        alert('Votre commande a été envoyée avec succès!');
+        cart = [];  // Vide le panier après envoi
+        renderCart();
     });
 });
