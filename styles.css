@@ -82,6 +82,24 @@ nav ul li a:hover {
     color: #fff;
 }
 
+/* Style pour le bouton "Ajouter au Panier" */
+.add-to-cart {
+    background-color: #ff6600; /* Orange pour le bouton */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #e55d00; /* Légère variation pour l'effet hover */
+}
+
 /* Style pour le footer */
 footer {
     background-color: #f60;
@@ -90,7 +108,7 @@ footer {
     text-align: center;
 }
 
-/* Style pour le contact */
+/* Style pour la section contact */
 .section-contact {
     margin-top: 30px;
 }
@@ -101,6 +119,12 @@ footer {
     .section-products .product-list {
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Plus petites colonnes */
     }
+
+    /* Ajustement de la taille du bouton "Ajouter au Panier" sur tablette */
+    .add-to-cart {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
 }
 
 @media (max-width: 480px) {
@@ -108,4 +132,19 @@ footer {
     .section-products .product-list {
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Colonnes encore plus petites */
     }
-} 
+
+    /* Ajuste la taille des images des produits et du bouton "Ajouter au Panier" */
+    .product-item img {
+        height: 120px;
+    }
+
+    .add-to-cart {
+        padding: 8px;
+        font-size: 0.8em;
+    }
+
+    /* Ajustement du texte du footer et des informations de contact pour les petits écrans */
+    footer p, .section-contact h2, .section-contact p {
+        font-size: 0.9em;
+    }
+}
