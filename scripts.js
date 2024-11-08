@@ -52,10 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Validation du panier
     checkoutButton.addEventListener('click', function() {
-        document.getElementById('delivery-info').style.display = 'block';
+        deliveryForm.style.display = 'block';
     });
 
-    // Envoi des informations de livraison
+    // Soumettre les informations de livraison
     deliveryForm.addEventListener('submit', function(event) {
         event.preventDefault();
 
@@ -64,13 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const phone = document.getElementById('phone').value;
         const address = document.getElementById('address').value;
 
-        const message = `Nom: ${name}\nPrénom: ${surname}\nTéléphone: ${phone}\nAdresse: ${address}`;
-        
-        // Simule l'envoi de message (ici, vous pouvez intégrer une vraie API pour envoyer le SMS)
-        console.log(`Message envoyé à +221778154664: ${message}`);
-
-        alert('Commande envoyée avec succès!');
-        cart.length = 0;  // Vider le panier après envoi
-        renderCart();
+        // Afficher un message de confirmation
+        alert(`Commande envoyée pour : ${name} ${surname}\nTéléphone: ${phone}\nAdresse: ${address}`);
     });
 });
