@@ -11,7 +11,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: #333;
+    background-color: #ffa500; /* Orange au lieu de bleu */
     color: #fff;
 }
 
@@ -61,7 +61,7 @@ header nav a {
 }
 
 .product-item {
-    background-color: #ffa500;
+    background-color: #ffa500; /* Fond orange */
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
@@ -71,7 +71,7 @@ header nav a {
 }
 
 .product-item img {
-    width: 100px; /* Limite la taille des images */
+    width: 80px; /* Limite la taille des images */
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -98,7 +98,7 @@ header nav a {
 footer {
     padding: 10px;
     text-align: center;
-    background-color: #333;
+    background-color: #ffa500; /* Footer orange */
     color: #fff;
 }
 
@@ -111,6 +111,6 @@ footer {
 
 @media (max-width: 480px) {
     .product-item {
-        width: 100%; /* 1 colonne sur les petits écrans */
+        width: calc(50% - 20px); /* 2 colonnes sur les petits écrans (téléphones) */
     }
 }
