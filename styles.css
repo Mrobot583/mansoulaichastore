@@ -102,6 +102,11 @@ footer {
     color: #fff;
 }
 
+.email {
+    color: #ffa500; /* Couleur orange */
+    text-decoration: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .product-item {
