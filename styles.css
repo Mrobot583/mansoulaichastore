@@ -159,7 +159,7 @@ footer {
     }
 
     header .logo img {
-        max-width: 40px; /* Taille du logo réduite */
+        max-width: 30px; /* Réduit la taille du logo */
     }
 
     /* Ajoute un espacement entre les éléments du menu */
@@ -207,15 +207,15 @@ footer {
 @media (max-width: 480px) {
     /* Amélioration des éléments pour les petits téléphones */
     header .logo img {
-        max-width: 30px; /* Réduit encore la taille du logo */
+        max-width: 25px; /* Réduit encore la taille du logo */
     }
 
     nav ul li a {
-        font-size: 0.9em;
+        font-size: 1em; /* Ajuste la taille des liens pour les petits écrans */
     }
 
     .section-home h1 {
-        font-size: 1.2em; /* Taille du titre réduite pour les petits écrans */
+        font-size: 1.4em; /* Taille du titre réduite pour les petits écrans */
     }
 
     .section-home p {
@@ -223,13 +223,13 @@ footer {
     }
 
     .section-products h2 {
-        font-size: 1.5em;
+        font-size: 1.6em;
     }
 
     .product-item {
         max-width: 100%;
         padding: 15px;
-        margin: 0 10px;
+        margin: 10px;
     }
 
     footer {
