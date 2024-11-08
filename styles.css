@@ -148,23 +148,54 @@ footer {
     text-decoration: underline;
 }
 
-/* Responsive design pour téléphones */
-@media (max-width: 768px) {
-    /* Ajuste la disposition du header pour les petits écrans */
+/* Responsive design pour les écrans moyens (tablettes) */
+@media (max-width: 1024px) {
     header {
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        padding: 20px;
+    }
+
+    header .logo img {
+        max-width: 35px;
+    }
+
+    .section-home h1 {
+        font-size: 1.8em;
+    }
+
+    .section-home p {
+        font-size: 1em;
+    }
+
+    .section-products .product-list {
+        grid-template-columns: repeat(2, 1fr); /* Deux produits par ligne */
+    }
+
+    .product-item img {
+        height: 180px; /* Ajuste la hauteur de l'image */
+    }
+}
+
+/* Responsive design pour les petits écrans (mobiles) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
         padding: 15px;
     }
 
     header .logo img {
-        max-width: 30px; /* Réduit la taille du logo */
+        max-width: 30px;
     }
 
-    /* Modifie la disposition des produits pour trois produits par ligne */
-    .section-products .product-list {
-        grid-template-columns: repeat(2, 1fr); /* Deux produits par ligne */
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 1em;
     }
 
     .section-home h1 {
@@ -179,9 +210,18 @@ footer {
         font-size: 1.8em;
     }
 
+    .section-products .product-list {
+        grid-template-columns: repeat(1, 1fr); /* Un produit par ligne sur petits écrans */
+        padding: 0 10px;
+    }
+
     .product-item {
         max-width: 100%;
-        margin: 10px 0;
+        margin-bottom: 15px;
+    }
+
+    .product-item img {
+        height: 150px; /* Ajuste la hauteur de l'image pour les petits écrans */
     }
 
     footer {
@@ -197,18 +237,14 @@ footer {
     }
 }
 
+/* Responsive design pour les très petits écrans (mobiles) */
 @media (max-width: 480px) {
-    /* Ajuste pour les très petits écrans */
     header .logo img {
         max-width: 25px;
     }
 
-    nav ul li a {
-        font-size: 1em;
-    }
-
     .section-home h1 {
-        font-size: 1.4em;
+        font-size: 1.3em;
     }
 
     .section-home p {
@@ -220,9 +256,8 @@ footer {
     }
 
     .product-item {
-        max-width: 100%;
         padding: 15px;
-        margin: 10px;
+        margin-bottom: 15px;
     }
 
     footer {
