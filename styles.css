@@ -1,33 +1,58 @@
-/* Conteneur des produits */
-.products {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Style pour chaque produit */
-.product {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
 }
 
-/* Style pour le footer */
-footer {
-    background-color: #f60;
+header .logo img {
+    width: 50px;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+}
+
+header nav a {
     color: white;
-    padding: 20px;
+    text-decoration: none;
+}
+
+/* Section Accueil */
+.section-home {
+    padding: 40px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.section-home h1 {
+    font-size: 2em;
+}
+
+/* Section Produits */
+.section-products {
+    padding: 40px;
+    background-color: #fff;
     text-align: center;
 }
 
-/* Style pour le contact */
-.section-contact {
-    margin-top: 30px;
+.section-products h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
 }
-/* Style pour la liste des produits */
+
 .product-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -35,24 +60,54 @@ footer {
     padding: 20px;
 }
 
-/* Style pour chaque produit */
 .product-item {
-    background-color: #ffa500; /* Couleur de fond pour chaque produit */
+    background-color: #ffa500;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 15px;
     text-align: center;
 }
 
-/* Ajustements pour les petits écrans */
+.product-item img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product-item h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.product-item p {
+    font-size: 1em;
+    color: #333;
+}
+
+/* Section Contact */
+.section-contact {
+    padding: 40px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+/* Footer */
+footer {
+    padding: 10px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .product-list {
-        grid-template-columns: repeat(2, 1fr); /* Deux colonnes sur les écrans plus petits */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 480px) {
     .product-list {
-        grid-template-columns: 1fr; /* Une colonne sur les écrans très petits */
+        grid-template-columns: 1fr;
     }
 }
