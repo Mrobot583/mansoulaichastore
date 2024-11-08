@@ -86,6 +86,10 @@ header nav a {
     font-size: 0.9em;
     color: #333;
 }
+.product-card {
+  width: 200px; /* Ajustez la taille selon votre besoin */
+  height: 250px;
+}
 
 /* Section Contact */
 .section-contact {
